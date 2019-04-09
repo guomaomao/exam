@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">考试监管</string>
+    <string name="ok">确定</string>
+    <string name="task">任务</string>
+    <string name="supervise">监管</string>
+    <string name="first">首页</string>
+    <string name="second">巡考</string>
+    <string name="third">我的</string>
+    <string name="appear_exam">约考</string>
+    <string name="waiting_exam">待考</string>
+    <string name="pass_rate">合格率</string>
+    <string name="completed">已完成</string>
+    <string name="wait_complete">待完成</string>
+    <string name="login">登录</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="ip_setting">IP地址设置</string>
+    <string name="officer_name">%1$s警官,\n您好！</string>
+    <string name="network_error">网络错误......</string>
+    <string name="empty">暂无数据......</string>
+
+    <string name="exam_plan">考试计划</string>
+    <string name="no_permission">没有权限</string>
+    <string name="device_not_online">设备不在线</string>
+    <string name="rtsp_success">启动取流成功</string>
+    <string name="rtsp_fail">启动取流失败</string>
+    <string name="indicator">%1$d/%2$d</string>
+    <string name="version_update">版本更新</string>
+
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/light_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/m_color"
+            android:layout_width="3dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/m_tv_todo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:id="@+id/m_ll_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="@string/wait_complete"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_medium_size" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="10dp"
+                android:src="@mipmap/more" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/m_ll_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="@string/completed"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_medium_size" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="10dp"
+                android:src="@mipmap/completed" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

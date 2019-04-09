@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.seatrend.exam">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
+    <application
+        android:name=".common.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.IPSettingActivity" />
+        <activity android:name=".activity.ExamPlanActivity" />
+        <activity android:name=".activity.SignActivity" />
+        <activity android:name=".activity.PrepareExamActivity" />
+        <activity android:name=".activity.CheckDetailActivity" />
+        <activity android:name=".activity.RoomExamActivity" />
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".activity.ForgetPasswordActivity" />
+        <activity android:name=".activity.BeforeExamEditActivity" />
+        <activity
+            android:name=".activity.AfterExamEditActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity android:name=".activity.VisitExamineActivity" />
+        <activity android:name=".activity.AddVisitRecordActivity" />
+        <activity android:name=".activity.WorkReportActivity" />
+        <activity android:name=".activity.FeedbackActivity" />
+        <activity android:name=".activity.SystemSettingActivity" />
+        <activity android:name=".activity.AddWorkReportActivity" />
+        <activity
+            android:name=".activity.RemoteInspectionActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity android:name=".activity.RemoteInspection2Activity" />
+        <activity
+            android:name=".activity.InspectionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true" />
+
+        <activity android:name=".activity.ResourceListActivity" />
+        <activity android:name=".activity.BigImageActivity" />
+        <activity android:name=".activity.ConfirmExamPlanActivity" />
+        <activity android:name=".activity.FingerprintLoginActivity" />
+
+        <service
+            android:name="com.seatrend.exam.service.UpdateService"
+            android:enabled="true" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+
+</manifest>

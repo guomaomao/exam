@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.seatrend.exam.common.view.CustomSurfaceView
+        android:id="@+id/m_surface_view"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/m_ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/transparent">
+
+        <ImageView
+            android:id="@+id/m_iv_left"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:src="@mipmap/red_back" />
+
+        <TextView
+            android:id="@+id/m_tv_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_super_size" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/m_ll_bottom"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:background="@color/transparent">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/m_tv_choose"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:text="选考台"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/text_normal_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/m_tv_examine_info"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:text="考生信息"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/text_normal_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/m_tv_process_snapping"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:text="过程抓拍"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/text_normal_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/m_tv_point_record"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:text="扣分记录"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/text_normal_size" />-->
+    <!--</LinearLayout>-->
+</RelativeLayout>

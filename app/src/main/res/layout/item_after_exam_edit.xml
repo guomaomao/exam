@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.考试监控台工作情况"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运行状态："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/selector_normal"
+                    android:button="@null"
+                    android:checked="true"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="正常"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_exception"
+                    android:button="@null"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="异常"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="检查照片："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/avatar" />
+
+                <ImageView
+                    android:id="@+id/m_iv_delete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:src="@mipmap/delete"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/m_ll_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/upload_success" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="上传成功"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/m_ll_uploading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/loading" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="正在上传..."
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/m_ll_failed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/failed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="上传失败！"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="@dimen/text_mini_size" />
+
+                <Button
+                    android:id="@+id/m_btn_re_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:background="@drawable/selector_blue_bg"
+                    android:textColor="@color/white"
+                    android:text="重新上传"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.考试数据统计"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="考试人数："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <EditText
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_stroke_gray_bg_white"
+                android:gravity="left"
+                android:hint="请输入考试人数"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="@dimen/text_normal_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合格人数："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <EditText
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_stroke_gray_bg_white"
+                android:gravity="left"
+                android:hint="请输入合格人数"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="@dimen/text_normal_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合格率：　"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <EditText
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_stroke_gray_bg_white"
+                android:gravity="left"
+                android:hint="请输入合格率　"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="@dimen/text_normal_size" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.考试数据复核"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运行状态："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/my_stroke_gray_bg_white"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/m_spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:spinnerMode="dialog" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="▼"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="复核意见："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <EditText
+                    android:id="@+id/m_et_exception"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/my_stroke_gray_bg_white"
+                    android:gravity="left"
+                    android:hint="请输入复核意见"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="@dimen/text_normal_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10dp"
+                    android:text="50"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.异常数据及其处理"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有无异常数据："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/selector_normal"
+                    android:button="@null"
+                    android:checked="true"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="3dp"
+                    android:text="无"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_exception"
+                    android:button="@null"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="3dp"
+                    android:text="有"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+            </RadioGroup>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6.突发及特殊情况处理"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有无突发情况："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/selector_normal"
+                    android:button="@null"
+                    android:checked="true"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="3dp"
+                    android:text="无"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_exception"
+                    android:button="@null"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="3dp"
+                    android:text="有"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="处置办法："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/my_stroke_gray_bg_white"
+                    android:gravity="left"
+                    android:hint="请输入异常信息处置办法"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="@dimen/text_normal_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10dp"
+                    android:text="50"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8.考试录像保存情况"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="责任人：　"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/my_stroke_gray_bg_white"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:spinnerMode="dialog" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="▼"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="保存情况："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/selector_normal"
+                    android:button="@null"
+                    android:checked="true"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="正常"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_exception"
+                    android:button="@null"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="异常"
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/text_normal_size" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9.其他"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="备注信息："
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_mini_size" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/my_stroke_gray_bg_white"
+                    android:gravity="left"
+                    android:hint="请输入备注信息"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="@dimen/text_normal_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10dp"
+                    android:text="50"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+</LinearLayout>

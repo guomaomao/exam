@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/blue"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/m_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioButton
+                android:id="@+id/m_rb_first"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_main_stroke_bg"
+                android:button="@null"
+                android:checked="true"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:gravity="center"
+                android:text="@string/task"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal_size" />
+
+            <RadioButton
+                android:id="@+id/m_rb_second"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:background="@drawable/selector_main_stroke_bg"
+                android:button="@null"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="@string/supervise"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal_size" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

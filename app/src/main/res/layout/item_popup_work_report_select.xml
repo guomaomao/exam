@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="日期"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_mini_size" />
+
+        <RadioGroup
+            android:id="@+id/m_rg_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/m_rb_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="今天"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+            <RadioButton
+                android:id="@+id/m_rb_date_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="全部"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="分类"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_mini_size" />
+
+        <RadioGroup
+            android:id="@+id/m_rg_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/m_rb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="全部"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+            <RadioButton
+                android:id="@+id/m_rb_daily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="日报"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+            <RadioButton
+                android:id="@+id/m_rb_weekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="周报"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+            <RadioButton
+                android:id="@+id/m_rb_monthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="月报"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+        </RadioGroup>
+
+        <include layout="@layout/view_small_button"/>
+
+    </LinearLayout>
+</LinearLayout>

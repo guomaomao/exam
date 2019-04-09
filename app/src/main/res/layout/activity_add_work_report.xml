@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_header_blue_with_left_right" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="报告类型:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal_size" />
+
+        <RadioGroup
+            android:id="@+id/m_rg_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/m_rb_daily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="日报"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+            <RadioButton
+                android:id="@+id/m_rb_weekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="周报"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+            <RadioButton
+                android:id="@+id/m_rb_monthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_stroke_orange"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="月报"
+                android:textColor="@drawable/selector_text_white"
+                android:textSize="@dimen/text_normal_size" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/m_et_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="left"
+            android:hint="请填写您今天的工作情况..."
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/dark_gray"
+            android:textSize="@dimen/text_normal_size" />
+
+        <TextView
+            android:id="@+id/m_tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/text_normal_size" />
+
+    </RelativeLayout>
+</LinearLayout>

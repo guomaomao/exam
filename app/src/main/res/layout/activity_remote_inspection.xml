@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_header_blue_with_left" />
+
+    <LinearLayout
+        android:id="@+id/m_ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/my_stroke_gray_bg_white"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/m_et_search_exam_room"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:maxLines="1"
+            android:hint="请输入考场名称"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/dark_gray"
+            android:textSize="@dimen/text_normal_size" />
+
+        <ImageView
+            android:id="@+id/m_iv_search_exam_room"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/orange"
+            android:padding="7dp"
+            android:src="@mipmap/search" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/light_gray" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/m_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

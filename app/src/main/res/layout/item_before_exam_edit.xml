@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:id="@+id/m_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:id="@+id/m_ll_top"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="运行状态："
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+                <RadioGroup
+                    android:id="@+id/m_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/m_rb_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/selector_normal"
+                        android:button="@null"
+                        android:checked="true"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="3dp"
+                        android:text="正常"
+                        android:textColor="@drawable/selector_text_blue"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <RadioButton
+                        android:id="@+id/m_rb_abnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_exception"
+                        android:button="@null"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="3dp"
+                        android:text="异常"
+                        android:textColor="@drawable/selector_text_blue"
+                        android:textSize="@dimen/text_normal_size" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="运行状态："
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="100dp">
+
+                    <ImageView
+                        android:id="@+id/m_iv_upload_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/upload_img" />
+
+                    <ImageView
+                        android:id="@+id/m_iv_delete"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:padding="5dp"
+                        android:src="@mipmap/delete"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/m_ll_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@mipmap/upload_success" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="上传成功"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text_mini_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/m_ll_uploading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@mipmap/loading" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="正在上传..."
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_mini_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/m_ll_failed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@mipmap/failed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="上传失败！"
+                        android:textColor="@color/dark_orange"
+                        android:textSize="@dimen/text_mini_size" />
+
+                    <Button
+                        android:id="@+id/m_btn_re_upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:background="@drawable/selector_blue_bg"
+                        android:text="重新上传"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_mini_size" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/m_ll_exception_deal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="处置办法："
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/text_mini_size" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/m_et_exception"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_stroke_blue_bg_white"
+                        android:gravity="left"
+                        android:hint="请输入异常信息处置办法"
+                        android:maxLength="50"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_gray"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <TextView
+                        android:id="@+id/m_tv_text_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="10dp"
+                        android:text="50"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="@dimen/text_mini_size" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/m_tv_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/my_bg_orange"
+                    android:padding="5dp"
+                    android:text="保存"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_mini_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/m_recycler_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+</LinearLayout>

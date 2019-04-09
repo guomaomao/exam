@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/m_cb_vehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:button="@null"
+
+        android:textSize="@dimen/text_normal_size"
+        android:textColor="@drawable/selector_text_blue"
+        android:padding="10dp"
+        android:background="@drawable/selector_stroke_green"
+        />
+
+</LinearLayout>
